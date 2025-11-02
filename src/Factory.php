@@ -69,6 +69,7 @@ final class Factory
             }
         }
 
+        /** @phpstan-var array<string> $sourcePaths */
         return new UnboundedOccursPaths(...$sourcePaths);
     }
 }

@@ -37,6 +37,10 @@ final class ConverterTest extends TestCase
 
     public function testConverterExportDoubleNodesAsArray(): void
     {
+        /**
+         * @phpstan-var list<array<string, string>> $conceptos
+         * @phpstan-ignore-next-line assign.propertyType
+         */
         $conceptos = $this->data['Conceptos']['Concepto'] ?? [];
         $this->assertCount(2, $conceptos);
 
@@ -49,11 +53,13 @@ final class ConverterTest extends TestCase
 
     public function testConverterExportsNodesAsArrayWhenTheyAreKnownFromComprobante(): void
     {
+        /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
         $this->assertArrayHasKey(0, $this->data['Impuestos']['Traslados']['Traslado']);
     }
 
     public function testConverterExportsNodesAsArrayWhenTheyAreKnownFromComplemento(): void
     {
+        /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
         $this->assertArrayHasKey(0, $this->data['Complemento'][0]['ImpuestosLocales']['TrasladosLocales']);
     }
 
@@ -64,7 +70,7 @@ final class ConverterTest extends TestCase
         $this->assertSame(
             'Un mil ciento sesenta pesos 00/100 m.n.',
             // empty key is the XML Node value
-            $data['Complemento'][0]['detallista']['specialInstruction']['text']['']
+            $data['Complemento'][0]['detallista']['specialInstruction']['text'][''] /** @phpstan-ignore-line */
         );
     }
 

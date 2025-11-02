@@ -59,6 +59,7 @@ final class Node
     public function toArray(): array
     {
         $textArray = ('' !== $this->getValue()) ? ['' => $this->getValue()] : [];
+        /** @phpstan-ignore-next-line return.type */
         return $textArray + $this->attributes + $this->children->toArray();
     }
 }
