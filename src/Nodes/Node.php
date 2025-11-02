@@ -12,7 +12,7 @@ final readonly class Node
         private string $path,
         private array $attributes,
         private Children $children,
-        private string $value = ''
+        private string $value
     ) {
     }
 

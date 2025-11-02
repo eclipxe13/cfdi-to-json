@@ -15,7 +15,7 @@ final class ChildrenTest extends TestCase
     {
         $unboundedOccursPaths = new UnboundedOccursPaths();
         $children = new Children($unboundedOccursPaths);
-        $nodeChapter = new Node('chapter', '/', [], new Children($unboundedOccursPaths));
+        $nodeChapter = new Node('chapter', '/', [], new Children($unboundedOccursPaths), '');
         $children->append($nodeChapter);
         $children->append($nodeChapter);
 
