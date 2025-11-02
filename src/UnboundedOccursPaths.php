@@ -7,7 +7,7 @@ namespace PhpCfdi\CfdiToJson;
 final class UnboundedOccursPaths
 {
     /** @var array<string, int|string> */
-    private $paths;
+    private array $paths;
 
     public function __construct(string ...$paths)
     {

@@ -11,14 +11,11 @@ final class XsdMaxOccursFromNsRegistry
     public const DEFAULT_REGISTRY_URL
         = 'https://raw.githubusercontent.com/phpcfdi/sat-ns-registry/master/complementos_v1.json';
 
-    /** @var string */
-    private $registryUrl;
+    private string $registryUrl;
 
-    /** @var FinderInterface */
-    private $finder;
+    private FinderInterface $finder;
 
-    /** @var DownloaderInterface */
-    private $downloader;
+    private DownloaderInterface $downloader;
 
     public function __construct(
         string $registryUrl = self::DEFAULT_REGISTRY_URL,

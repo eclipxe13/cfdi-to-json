@@ -10,10 +10,9 @@ use PhpCfdi\CfdiToJson\Tests\TestCase;
 final class ConverterTest extends TestCase
 {
     /**
-     * @var array
      * @phpstan-ignore-next-line
      */
-    private $data;
+    private array $data;
 
     protected function setUp(): void
     {

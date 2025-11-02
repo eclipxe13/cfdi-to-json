@@ -7,7 +7,7 @@ namespace PhpCfdi\CfdiToJson\Nodes;
 final class KeysCounter
 {
     /** @var array<string, int> */
-    private $counts;
+    private array $counts = [];
 
     public function register(string $key): void
     {

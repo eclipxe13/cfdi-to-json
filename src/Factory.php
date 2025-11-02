@@ -9,8 +9,7 @@ use LogicException;
 
 final class Factory
 {
-    /** @var UnboundedOccursPaths */
-    private $unboundedOccursPaths;
+    private UnboundedOccursPaths $unboundedOccursPaths;
 
     public function __construct(?UnboundedOccursPaths $unboundedOccursPaths = null)
     {

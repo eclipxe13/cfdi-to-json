@@ -6,20 +6,16 @@ namespace PhpCfdi\CfdiToJson\Nodes;
 
 final class Node
 {
-    /** @var string */
-    private $key;
+    private string $key;
 
-    /** @var string */
-    private $path;
+    private string $path;
 
-    /** @var Children */
-    private $children;
+    private Children $children;
 
     /** @var array<string, string> */
-    private $attributes;
+    private array $attributes;
 
-    /** @var string */
-    private $value;
+    private string $value;
 
     /**
      * @param array<string, string> $attributes
