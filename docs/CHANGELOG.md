@@ -11,6 +11,22 @@ versión aunque sí su incorporación en la rama principal de trabajo, generalme
 
 ## Listado de cambios
 
+### Versión 0.4.0 2025-11-02
+
+Se ha comprobado la compatibilidad con PHP 8.4 y se ha establecido la versión mínima a PHP 8.2.
+Esto ha llevado a cambios las firmas de código, específicamente en la clase `XsdMaxOccursFromNsRegistry`.
+
+- En los flujos de trabajo de GitHub:
+  - Se ejecutan los trabajos en PHP 8.4.
+  - Se agrega PHP 8.4 a la matriz de pruebas.
+  - Se eliminan las versiones menores a PHP 8.2 de la matriz de pruebas.
+- Se actualiza la integración con *SonarQube Cloud*.
+- Se actualizan las reglas para el estándar de código.
+- Se corrigen las incidencias de PHPStan 2 por anotaciones.
+- Se mejoran las pruebas y el código para reducir los *mutantes* en las pruebas de mutación. 
+- Se actualiza la versión mínima de PHPUnit a 11.5.
+- Se actualizan las herramientas de desarrollo.
+
 ### Versión 0.3.5 2024-07-11
 
 - Se actualiza el archivo `UnboundedOccursPaths.json` porque se incluyó el nuevo complemento *Carta Porte 3.1*.
