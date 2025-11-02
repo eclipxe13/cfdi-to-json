@@ -6,9 +6,6 @@ namespace PhpCfdi\CfdiToJson\XsdMaxOccurs;
 
 interface FinderInterface
 {
-    /**
-     * @param string $xsdContents
-     * @return string[]
-     */
+    /** @return string[] */
     public function obtainPathsFromXsdContents(string $xsdContents): array;
 }

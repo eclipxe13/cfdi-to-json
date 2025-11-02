@@ -11,14 +11,10 @@ use DOMNamedNodeMap;
 use DOMText;
 use InvalidArgumentException;
 
-final class CfdiToDataNode
+final readonly class CfdiToDataNode
 {
-    /** @var UnboundedOccursPaths */
-    private $unboundedOccursPaths;
-
-    public function __construct(UnboundedOccursPaths $unboundedOccursPaths)
+    public function __construct(private UnboundedOccursPaths $unboundedOccursPaths)
     {
-        $this->unboundedOccursPaths = $unboundedOccursPaths;
     }
 
     public function getUnboundedOccursPaths(): UnboundedOccursPaths
@@ -61,12 +57,11 @@ final class CfdiToDataNode
             $path,
             $this->obtainAttributes($element),
             $convertionChildren,
-            $value
+            $value,
         );
     }
 
     /**
-     * @param DOMElement $element
      * @return array<string, string>
      */
     private function obtainAttributes(DOMElement $element): array

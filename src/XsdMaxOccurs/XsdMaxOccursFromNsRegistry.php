@@ -6,28 +6,16 @@ namespace PhpCfdi\CfdiToJson\XsdMaxOccurs;
 
 use RuntimeException;
 
-final class XsdMaxOccursFromNsRegistry
+final readonly class XsdMaxOccursFromNsRegistry
 {
     public const DEFAULT_REGISTRY_URL
         = 'https://raw.githubusercontent.com/phpcfdi/sat-ns-registry/master/complementos_v1.json';
 
-    /** @var string */
-    private $registryUrl;
-
-    /** @var FinderInterface */
-    private $finder;
-
-    /** @var DownloaderInterface */
-    private $downloader;
-
     public function __construct(
-        string $registryUrl = self::DEFAULT_REGISTRY_URL,
-        ?DownloaderInterface $downloader = null,
-        ?FinderInterface $finder = null
+        private string $registryUrl = self::DEFAULT_REGISTRY_URL,
+        private DownloaderInterface $downloader = new Downloader(),
+        private FinderInterface $finder = new Finder(),
     ) {
-        $this->registryUrl = $registryUrl;
-        $this->downloader = $downloader ?? new Downloader();
-        $this->finder = $finder ?? new Finder();
     }
 
     public function getRegistryUrl(): string
@@ -44,7 +32,7 @@ final class XsdMaxOccursFromNsRegistry
     public function obtainPaths(): array
     {
         $registryContents = $this->downloadUrl($this->getRegistryUrl());
-        $entries = json_decode($registryContents, true, JSON_THROW_ON_ERROR);
+        $entries = json_decode($registryContents, true);
         if (! is_array($entries)) {
             throw new RuntimeException('Unexpected registry structure, root entry is not an array');
         }
@@ -68,17 +56,12 @@ final class XsdMaxOccursFromNsRegistry
 
         $entries = array_merge(...$paths);
         sort($entries);
-        $entries = array_values(array_unique($entries));
 
-        return $entries;
+        return array_values(array_unique($entries));
     }
 
-    /**
-     * @param int|string $index
-     * @param mixed $entry
-     * @return string[]
-     */
-    private function obtainPathsFromEntry($index, $entry): array
+    /** @return string[] */
+    private function obtainPathsFromEntry(int|string $index, mixed $entry): array
     {
         if (! is_array($entry)) {
             throw new RuntimeException("Unexpected registry structure, entry $index is not an array");

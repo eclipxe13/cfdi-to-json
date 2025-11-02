@@ -9,17 +9,13 @@ use PhpCfdi\CfdiToJson\UnboundedOccursPaths;
 final class Children
 {
     /** @var Node[] */
-    private $children = [];
+    private array $children = [];
 
-    /** @var UnboundedOccursPaths */
-    private $unboundedOccursPaths;
+    private readonly KeysCounter $keysCounter;
 
-    /** @var KeysCounter */
-    private $keysCounter;
-
-    public function __construct(UnboundedOccursPaths $unboundedOccursPaths)
-    {
-        $this->unboundedOccursPaths = $unboundedOccursPaths;
+    public function __construct(
+        private readonly UnboundedOccursPaths $unboundedOccursPaths,
+    ) {
         $this->keysCounter = new KeysCounter();
     }
 
@@ -36,7 +32,6 @@ final class Children
     }
 
     /**
-     * @return array
      * @phpstan-ignore-next-line
      */
     public function toArray(): array

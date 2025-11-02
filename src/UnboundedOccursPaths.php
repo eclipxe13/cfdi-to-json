@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace PhpCfdi\CfdiToJson;
 
-final class UnboundedOccursPaths
+final readonly class UnboundedOccursPaths
 {
     /** @var array<string, int|string> */
-    private $paths;
+    private array $paths;
 
     public function __construct(string ...$paths)
     {

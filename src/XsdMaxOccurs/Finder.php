@@ -14,8 +14,7 @@ final class Finder implements FinderInterface
 {
     private const NS_XMLSCHEMA = 'http://www.w3.org/2001/XMLSchema';
 
-    /** @var string */
-    private $targetNamespace = '';
+    private string $targetNamespace = '';
 
     public function obtainPathsFromXsdContents(string $xsdContents): array
     {
@@ -32,8 +31,6 @@ final class Finder implements FinderInterface
     }
 
     /**
-     * @param DOMDocument $document
-     * @param string $query
      * @return string[]
      */
     private function obtainPathsForXPathQuery(DOMDocument $document, string $query): array

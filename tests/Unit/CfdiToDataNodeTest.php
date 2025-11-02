@@ -21,4 +21,15 @@ class CfdiToDataNodeTest extends TestCase
         $this->expectExceptionMessage('The DOMDocument does not have a root element');
         $converter->convertXmlDocument($document);
     }
+
+    public function testConvertXmlWithTwoTextElements(): void
+    {
+        $document = new DOMDocument();
+        $document->loadXML(<<<XML
+                <root>foo <child/> bar</root>
+            XML);
+        $converter = new CfdiToDataNode(new UnboundedOccursPaths());
+        $converted = $converter->convertXmlDocument($document);
+        $this->assertSame('foo bar', $converted->getValue());
+    }
 }

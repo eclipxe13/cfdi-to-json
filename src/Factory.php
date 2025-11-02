@@ -7,10 +7,9 @@ namespace PhpCfdi\CfdiToJson;
 use JsonException;
 use LogicException;
 
-final class Factory
+final readonly class Factory
 {
-    /** @var UnboundedOccursPaths */
-    private $unboundedOccursPaths;
+    private UnboundedOccursPaths $unboundedOccursPaths;
 
     public function __construct(?UnboundedOccursPaths $unboundedOccursPaths = null)
     {
@@ -44,20 +43,18 @@ final class Factory
         try {
             $unboundedOccursPaths = $this->createUnboundedOccursPathsUsingJsonSource($contents);
         } catch (JsonException | LogicException $exception) {
-            throw new LogicException("The file $sourceFile has invalid contents", 0, $exception);
+            throw new LogicException("The file $sourceFile has invalid contents", previous: $exception);
         }
 
         return $unboundedOccursPaths;
     }
 
     /**
-     * @param string $contents
-     * @return UnboundedOccursPaths
      * @throws JsonException|LogicException
      */
     public function createUnboundedOccursPathsUsingJsonSource(string $contents): UnboundedOccursPaths
     {
-        $sourcePaths = json_decode($contents, true, 512, JSON_THROW_ON_ERROR);
+        $sourcePaths = json_decode($contents, true, flags: JSON_THROW_ON_ERROR);
 
         if (! is_array($sourcePaths)) {
             throw new LogicException('JSON does not contains an array of entries');
@@ -69,6 +66,7 @@ final class Factory
             }
         }
 
+        /** @phpstan-var array<string> $sourcePaths */
         return new UnboundedOccursPaths(...$sourcePaths);
     }
 }
