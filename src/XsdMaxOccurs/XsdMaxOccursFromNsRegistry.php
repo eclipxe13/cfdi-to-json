@@ -32,7 +32,7 @@ final readonly class XsdMaxOccursFromNsRegistry
     public function obtainPaths(): array
     {
         $registryContents = $this->downloadUrl($this->getRegistryUrl());
-        $entries = json_decode($registryContents, true, JSON_THROW_ON_ERROR);
+        $entries = json_decode($registryContents, true);
         if (! is_array($entries)) {
             throw new RuntimeException('Unexpected registry structure, root entry is not an array');
         }
