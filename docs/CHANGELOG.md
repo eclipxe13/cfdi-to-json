@@ -9,15 +9,23 @@ versión aunque sí su incorporación en la rama principal de trabajo, generalme
 
 ## Cambios no liberados en una versión
 
+No hay cambios.
+
 ## Listado de cambios
 
 ### Versión 0.4.0 2025-11-02
 
 Se ha comprobado la compatibilidad con PHP 8.4 y se ha establecido la versión mínima a PHP 8.2.
 Esto ha llevado a cambios las firmas de código, específicamente en la clase `XsdMaxOccursFromNsRegistry`.
+Igualmente, se ha cambiado de opcional a obligatorio el parámetro `$value` de la clase `PhpCfdi\CfdiToJson\Nodes\Node`.
+
+Estos son algunos cambios menores:
 
 - Se elimina el archivo `infection.json.dist` del paquete generado por Git.
 - Se actualiza el año de licencia a 2025.
+
+Los siguientes cambios ocurren en el entorno de desarrollo.
+
 - En los flujos de trabajo de GitHub:
   - Se ejecutan los trabajos en PHP 8.4.
   - Se agrega PHP 8.4 a la matriz de pruebas.
