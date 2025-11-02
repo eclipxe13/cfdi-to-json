@@ -36,7 +36,6 @@ final class Children
     }
 
     /**
-     * @return array
      * @phpstan-ignore-next-line
      */
     public function toArray(): array

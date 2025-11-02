@@ -22,11 +22,7 @@ final class Node
     private $value;
 
     /**
-     * @param string $key
-     * @param string $path
      * @param array<string, string> $attributes
-     * @param Children $children
-     * @param string $value
      */
     public function __construct(string $key, string $path, array $attributes, Children $children, string $value = '')
     {

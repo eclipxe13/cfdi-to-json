@@ -51,8 +51,6 @@ final class Factory
     }
 
     /**
-     * @param string $contents
-     * @return UnboundedOccursPaths
      * @throws JsonException|LogicException
      */
     public function createUnboundedOccursPathsUsingJsonSource(string $contents): UnboundedOccursPaths

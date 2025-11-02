@@ -13,7 +13,6 @@ final class JsonConverter
      *
      * @param string $cfdi XML cfdi contents
      * @param int $jsonOptions defaults to JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
-     * @return string
      * @throws JsonException
      */
     public static function convertToJson(
@@ -26,8 +25,6 @@ final class JsonConverter
     /**
      * Helper function to convert a Cfdi XML contents to JSON string
      *
-     * @param string $cfdi
-     * @return array
      * @phpstan-ignore-next-line
      */
     public static function convertToArray(string $cfdi): array

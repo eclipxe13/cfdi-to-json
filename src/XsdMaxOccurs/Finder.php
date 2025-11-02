@@ -32,8 +32,6 @@ final class Finder implements FinderInterface
     }
 
     /**
-     * @param DOMDocument $document
-     * @param string $query
      * @return string[]
      */
     private function obtainPathsForXPathQuery(DOMDocument $document, string $query): array

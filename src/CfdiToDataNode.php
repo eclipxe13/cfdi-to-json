@@ -66,7 +66,6 @@ final class CfdiToDataNode
     }
 
     /**
-     * @param DOMElement $element
      * @return array<string, string>
      */
     private function obtainAttributes(DOMElement $element): array
