@@ -16,6 +16,7 @@ versión aunque sí su incorporación en la rama principal de trabajo, generalme
 Se ha comprobado la compatibilidad con PHP 8.4 y se ha establecido la versión mínima a PHP 8.2.
 Esto ha llevado a cambios las firmas de código, específicamente en la clase `XsdMaxOccursFromNsRegistry`.
 
+- Se actualiza el año de licencia a 2025.
 - En los flujos de trabajo de GitHub:
   - Se ejecutan los trabajos en PHP 8.4.
   - Se agrega PHP 8.4 a la matriz de pruebas.
