@@ -8,9 +8,9 @@ require __DIR__ . '/../vendor/autoload.php';
 
 exit(call_user_func(new class (...$argv) {
     /** @var string[] */
-    private array $arguments;
+    private readonly array $arguments;
 
-    public function __construct(private string $commandName, string ...$arguments)
+    public function __construct(private readonly string $commandName, string ...$arguments)
     {
         $this->arguments = $arguments;
     }

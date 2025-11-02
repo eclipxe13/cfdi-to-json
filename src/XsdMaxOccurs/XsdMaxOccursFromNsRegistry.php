@@ -6,22 +6,16 @@ namespace PhpCfdi\CfdiToJson\XsdMaxOccurs;
 
 use RuntimeException;
 
-final class XsdMaxOccursFromNsRegistry
+final readonly class XsdMaxOccursFromNsRegistry
 {
     public const DEFAULT_REGISTRY_URL
         = 'https://raw.githubusercontent.com/phpcfdi/sat-ns-registry/master/complementos_v1.json';
 
-    private FinderInterface $finder;
-
-    private DownloaderInterface $downloader;
-
     public function __construct(
         private string $registryUrl = self::DEFAULT_REGISTRY_URL,
-        ?DownloaderInterface $downloader = null,
-        ?FinderInterface $finder = null
+        private DownloaderInterface $downloader = new Downloader(),
+        private FinderInterface $finder = new Finder(),
     ) {
-        $this->downloader = $downloader ?? new Downloader();
-        $this->finder = $finder ?? new Finder();
     }
 
     public function getRegistryUrl(): string

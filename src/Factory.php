@@ -7,7 +7,7 @@ namespace PhpCfdi\CfdiToJson;
 use JsonException;
 use LogicException;
 
-final class Factory
+final readonly class Factory
 {
     private UnboundedOccursPaths $unboundedOccursPaths;
 

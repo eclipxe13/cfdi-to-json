@@ -11,7 +11,7 @@ use DOMNamedNodeMap;
 use DOMText;
 use InvalidArgumentException;
 
-final class CfdiToDataNode
+final readonly class CfdiToDataNode
 {
     public function __construct(private UnboundedOccursPaths $unboundedOccursPaths)
     {

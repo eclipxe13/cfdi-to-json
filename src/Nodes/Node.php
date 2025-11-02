@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpCfdi\CfdiToJson\Nodes;
 
-final class Node
+final readonly class Node
 {
     /** @param array<string, string> $attributes */
     public function __construct(

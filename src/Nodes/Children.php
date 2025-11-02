@@ -11,10 +11,11 @@ final class Children
     /** @var Node[] */
     private array $children = [];
 
-    private KeysCounter $keysCounter;
+    private readonly KeysCounter $keysCounter;
 
-    public function __construct(private UnboundedOccursPaths $unboundedOccursPaths)
-    {
+    public function __construct(
+        private readonly UnboundedOccursPaths $unboundedOccursPaths,
+    ) {
         $this->keysCounter = new KeysCounter();
     }
 
