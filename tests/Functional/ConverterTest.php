@@ -69,7 +69,7 @@ final class ConverterTest extends TestCase
         $this->assertSame(
             'Un mil ciento sesenta pesos 00/100 m.n.',
             // empty key is the XML Node value
-            $data['Complemento'][0]['detallista']['specialInstruction']['text'][''] /** @phpstan-ignore-line */
+            $data['Complemento'][0]['detallista']['specialInstruction']['text'][''], /** @phpstan-ignore-line */
         );
     }
 

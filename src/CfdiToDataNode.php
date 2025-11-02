@@ -57,7 +57,7 @@ final readonly class CfdiToDataNode
             $path,
             $this->obtainAttributes($element),
             $convertionChildren,
-            $value
+            $value,
         );
     }
 

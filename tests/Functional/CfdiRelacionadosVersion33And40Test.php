@@ -34,7 +34,7 @@ final class CfdiRelacionadosVersion33And40Test extends TestCase
 
         $this->assertJsonStringEqualsJsonString(
             $expectedJson,
-            JsonConverter::convertToJson($cfdi33)
+            JsonConverter::convertToJson($cfdi33),
         );
     }
 
@@ -63,7 +63,7 @@ final class CfdiRelacionadosVersion33And40Test extends TestCase
 
         $this->assertJsonStringEqualsJsonString(
             $expectedJson,
-            JsonConverter::convertToJson($cfdi33)
+            JsonConverter::convertToJson($cfdi33),
         );
     }
 }

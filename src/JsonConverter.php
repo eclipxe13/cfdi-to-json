@@ -17,7 +17,7 @@ final class JsonConverter
      */
     public static function convertToJson(
         string $cfdi,
-        int $jsonOptions = JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
+        int $jsonOptions = JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES,
     ): string {
         return json_encode(self::convertToArray($cfdi), $jsonOptions | JSON_THROW_ON_ERROR);
     }

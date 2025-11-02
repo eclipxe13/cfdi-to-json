@@ -14,7 +14,7 @@ class DetallistaTest extends TestCase
         /** @noinspection PhpUnhandledExceptionInspection */
         $this->assertJsonStringEqualsJsonString(
             $this->fileContents('detallista-example.json'),
-            JsonConverter::convertToJson($this->fileContents('detallista-example.xml'))
+            JsonConverter::convertToJson($this->fileContents('detallista-example.xml')),
         );
     }
 }
