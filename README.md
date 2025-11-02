@@ -286,6 +286,6 @@ and licensed for use under the MIT License (MIT). Please see [LICENSE][] for mor
 [badge-build]: https://img.shields.io/github/actions/workflow/status/phpcfdi/cfdi-to-json/build.yml?branch=main&logo=github-actions
 [badge-reliability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_cfdi-to-json&metric=reliability_rating
 [badge-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=phpcfdi_cfdi-to-json&metric=sqale_rating
-[badge-coverage]: https://img.shields.io/sonar/coverage/phpcfdi_cfdi-to-json/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io
-[badge-violations]: https://img.shields.io/sonar/violations/phpcfdi_cfdi-to-json/main?format=long&logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io
+[badge-coverage]: https://img.shields.io/sonar/coverage/phpcfdi_cfdi-to-json/main?logo=sonarqubecloud&server=https%3A%2F%2Fsonarcloud.io
+[badge-violations]: https://img.shields.io/sonar/violations/phpcfdi_cfdi-to-json/main?format=long&logo=sonarqubecloud&server=https%3A%2F%2Fsonarcloud.io
 [badge-downloads]: https://img.shields.io/packagist/dt/phpcfdi/cfdi-to-json?logo=packagist
