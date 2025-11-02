@@ -7,14 +7,11 @@ use PhpCfdi\CfdiToJson\XsdMaxOccurs\XsdMaxOccursFromNsRegistry;
 require __DIR__ . '/../vendor/autoload.php';
 
 exit(call_user_func(new class (...$argv) {
-    private string $commandName;
-
     /** @var string[] */
     private array $arguments;
 
-    public function __construct(string $commandName, string ...$arguments)
+    public function __construct(private string $commandName, string ...$arguments)
     {
-        $this->commandName = $commandName;
         $this->arguments = $arguments;
     }
 

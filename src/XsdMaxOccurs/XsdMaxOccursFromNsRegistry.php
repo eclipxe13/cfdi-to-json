@@ -11,18 +11,15 @@ final class XsdMaxOccursFromNsRegistry
     public const DEFAULT_REGISTRY_URL
         = 'https://raw.githubusercontent.com/phpcfdi/sat-ns-registry/master/complementos_v1.json';
 
-    private string $registryUrl;
-
     private FinderInterface $finder;
 
     private DownloaderInterface $downloader;
 
     public function __construct(
-        string $registryUrl = self::DEFAULT_REGISTRY_URL,
+        private string $registryUrl = self::DEFAULT_REGISTRY_URL,
         ?DownloaderInterface $downloader = null,
         ?FinderInterface $finder = null
     ) {
-        $this->registryUrl = $registryUrl;
         $this->downloader = $downloader ?? new Downloader();
         $this->finder = $finder ?? new Finder();
     }
@@ -69,12 +66,8 @@ final class XsdMaxOccursFromNsRegistry
         return array_values(array_unique($entries));
     }
 
-    /**
-     * @param int|string $index
-     * @param mixed $entry
-     * @return string[]
-     */
-    private function obtainPathsFromEntry($index, $entry): array
+    /** @return string[] */
+    private function obtainPathsFromEntry(int|string $index, mixed $entry): array
     {
         if (! is_array($entry)) {
             throw new RuntimeException("Unexpected registry structure, entry $index is not an array");

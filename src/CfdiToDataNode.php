@@ -13,11 +13,8 @@ use InvalidArgumentException;
 
 final class CfdiToDataNode
 {
-    private UnboundedOccursPaths $unboundedOccursPaths;
-
-    public function __construct(UnboundedOccursPaths $unboundedOccursPaths)
+    public function __construct(private UnboundedOccursPaths $unboundedOccursPaths)
     {
-        $this->unboundedOccursPaths = $unboundedOccursPaths;
     }
 
     public function getUnboundedOccursPaths(): UnboundedOccursPaths

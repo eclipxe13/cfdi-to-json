@@ -6,27 +6,14 @@ namespace PhpCfdi\CfdiToJson\Nodes;
 
 final class Node
 {
-    private string $key;
-
-    private string $path;
-
-    private Children $children;
-
-    /** @var array<string, string> */
-    private array $attributes;
-
-    private string $value;
-
-    /**
-     * @param array<string, string> $attributes
-     */
-    public function __construct(string $key, string $path, array $attributes, Children $children, string $value = '')
-    {
-        $this->key = $key;
-        $this->path = $path;
-        $this->attributes = $attributes;
-        $this->children = $children;
-        $this->value = $value;
+    /** @param array<string, string> $attributes */
+    public function __construct(
+        private string $key,
+        private string $path,
+        private array $attributes,
+        private Children $children,
+        private string $value = ''
+    ) {
     }
 
     public function getKey(): string
