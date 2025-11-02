@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phive xmlns="https://phar.io/phive">
-  <phar name="php-cs-fixer" version="^3.59.3" installed="3.59.3" location="./tools/php-cs-fixer" copy="false"/>
-  <phar name="phpcbf" version="^3.10.1" installed="3.10.1" location="./tools/phpcbf" copy="false"/>
-  <phar name="phpcs" version="^3.10.1" installed="3.10.1" location="./tools/phpcs" copy="false"/>
-  <phar name="phpstan" version="^1.11.7" installed="1.11.7" location="./tools/phpstan" copy="false"/>
-  <phar name="infection" version="^0.28.1" installed="0.28.1" location="./tools/infection" copy="false"/>
+  <phar name="php-cs-fixer" version="^3.89.1" installed="3.89.1" location="./tools/php-cs-fixer" copy="false"/>
+  <phar name="phpcbf" version="^3.13.4" installed="3.13.4" location="./tools/phpcbf" copy="false"/>
+  <phar name="phpcs" version="^3.13.4" installed="3.13.4" location="./tools/phpcs" copy="false"/>
+  <phar name="phpstan" version="^2.1.30" installed="2.1.30" location="./tools/phpstan" copy="false"/>
+  <phar name="infection" version="^0.31.9" installed="0.31.9" location="./tools/infection" copy="false"/>
 </phive>
